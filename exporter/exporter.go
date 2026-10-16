@@ -585,7 +585,13 @@ func (e *Exporter) collect(ch chan<- prometheus.Metric) {
 					assignment, err := member.GetMemberAssignment()
 					if err != nil {
 						level.Error(e.logger).Log("msg", "cannot get GetMemberAssignment of group member", "member", member, "err", err)
-						return
+						continue
+					}
+					// GetMemberAssignment returns (nil, nil) for an empty assignment,
+					// e.g. while the group is rebalancing.
+					if assignment == nil {
+						level.Warn(e.logger).Log("msg", "empty MemberAssignment for group member, skipping", "group", group.GroupId, "member", member.MemberId)
+						continue
 					}
 					for topic, partions := range assignment.Topics {
 						for _, partition := range partions {
