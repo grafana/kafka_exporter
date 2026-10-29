@@ -1,6 +1,6 @@
 module github.com/grafana/kafka_exporter
 
-go 1.20
+go 1.24
 
 require (
 	github.com/Shopify/sarama v1.38.1
@@ -20,7 +20,7 @@ require (
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.4.3 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
-	github.com/klauspost/compress v1.15.14 // indirect
+	github.com/klauspost/compress v1.18.7 // indirect
 	github.com/krallistic/kazoo-go v0.0.0-20170526135507-a15279744f4e
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/pkg/errors v0.9.1
@@ -39,11 +39,13 @@ require (
 	google.golang.org/protobuf v1.30.0 // indirect
 )
 
-require k8s.io/klog/v2 v2.100.1
+require (
+	github.com/go-kit/kit v0.13.0
+	github.com/go-kit/log v0.2.1
+	k8s.io/klog/v2 v2.100.1
+)
 
 require (
-	github.com/go-kit/kit v0.13.0 // indirect
-	github.com/go-kit/log v0.2.1 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-logr/logr v1.2.0 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
