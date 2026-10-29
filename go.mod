@@ -36,14 +36,16 @@ require (
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
-	google.golang.org/protobuf v1.30.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 )
 
-require k8s.io/klog/v2 v2.100.1
+require (
+	github.com/go-kit/kit v0.13.0
+	github.com/go-kit/log v0.2.1
+	k8s.io/klog/v2 v2.100.1
+)
 
 require (
-	github.com/go-kit/kit v0.13.0 // indirect
-	github.com/go-kit/log v0.2.1 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-logr/logr v1.2.0 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
